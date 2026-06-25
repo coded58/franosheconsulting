@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,23 +25,128 @@
     <!-- Header -->
     <header class="header" id="header">
       <div class="container header__inner">
-        <a href="#home" class="header__logo">
-          <img src="assets/images/logo.png" alt="Franoshe Consulting" />
+        <a href="#home" class="header__brand">
+          <img
+            class="header__logo"
+            src="assets/images/logo.png"
+            alt="Franoshe Consulting"
+          />
+          <span class="header__divider" aria-hidden="true"></span>
+          <span class="header__tagline">Growth<br />is Intentional.</span>
         </a>
 
-        <nav class="nav" id="nav">
+        <nav class="nav" id="nav" aria-label="Main navigation">
           <ul class="nav__list">
             <li><a href="#home" class="nav__link">Home</a></li>
-            <li><a href="#about" class="nav__link">About Us</a></li>
-            <li><a href="#services" class="nav__link">What We Do</a></li>
-            <li><a href="#approach" class="nav__link">Our Approach</a></li>
-            <li><a href="#resources" class="nav__link">Resources</a></li>
+
+            <li class="nav__item nav__item--dropdown">
+              <button
+                type="button"
+                class="nav__link nav__dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                About Us
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <ul class="nav__dropdown">
+                <li>
+                  <a href="#philosophy" class="nav__dropdown-link"
+                    >Our Philosophy</a
+                  >
+                </li>
+                <li>
+                  <a href="#impact" class="nav__dropdown-link"
+                    >Impact &amp; Partnerships</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav__item nav__item--dropdown">
+              <button
+                type="button"
+                class="nav__link nav__dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                What We Do
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <ul class="nav__dropdown">
+                <li>
+                  <a href="#focus" class="nav__dropdown-link">Our Focus</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav__item nav__item--dropdown">
+              <button
+                type="button"
+                class="nav__link nav__dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Our Approach
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <ul class="nav__dropdown">
+                <li>
+                  <a href="#method" class="nav__dropdown-link"
+                    >The Franoshe Method</a
+                  >
+                </li>
+                <li>
+                  <a href="#grow-with-us" class="nav__dropdown-link"
+                    >Grow With Us</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav__item nav__item--dropdown">
+              <button
+                type="button"
+                class="nav__link nav__dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Resources
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <ul class="nav__dropdown">
+                <li>
+                  <a href="#insights" class="nav__dropdown-link">Insights</a>
+                </li>
+                <li>
+                  <a
+                    href="#opportunities-recruitment"
+                    class="nav__dropdown-link"
+                    >Growth Opportunities</a
+                  >
+                </li>
+                <li>
+                  <a href="#opportunities-learning" class="nav__dropdown-link"
+                    >Learning Experiences</a
+                  >
+                </li>
+                <li>
+                  <a href="#opportunities-events" class="nav__dropdown-link"
+                    >Growth in Action</a
+                  >
+                </li>
+              </ul>
+            </li>
+
             <li><a href="#contact" class="nav__link">Contact Us</a></li>
           </ul>
+          <a href="#contact" class="btn btn--primary nav__mobile-cta"
+            >Start Your Growth Journey</a
+          >
         </nav>
 
         <a href="#contact" class="btn btn--primary header__cta"
-          >Schedule a Consultation</a
+          >Start Your Growth Journey</a
         >
 
         <button
@@ -63,11 +168,12 @@
         <div class="hero__bg" aria-hidden="true"></div>
         <div class="container hero__inner">
           <div class="hero__content fade-up">
-            <h1 class="hero__title">
-              Growth is <span class="hero__title-underline">Intentional.</span>
-            </h1>
+            <h1 class="hero__title">Growth is Intentional.</h1>
             <p class="hero__subtitle">
               Building People. Developing Leaders. Strengthening Organizations.
+            </p>
+            <p class="hero__positioning">
+              People &amp; Organizational Growth Partner
             </p>
             <div class="hero__text">
               <p>
@@ -82,551 +188,766 @@
                 structures that drive sustainable business growth.
               </p>
               <p>
-                Through strategic HR consulting, leadership development and
-                corporate learning, we help businesses create workplaces where
-                people flourish, leaders inspire and performance becomes a
-                competitive advantage.
+                Through people strategy, leadership development and
+                organizational capability solutions, we help businesses create
+                workplaces where people flourish, leaders inspire and
+                performance becomes a competitive advantage.
               </p>
-              <p class="hero__emphasis" style="font-weight: 700 !important">
-                Because growth is intentional.
-              </p>
+              <p class="hero__emphasis">Because growth is intentional.</p>
             </div>
-            <a href="#contact" class="btn btn--primary btn--icon">
-              <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-              Schedule a Consultation
-            </a>
+            <div class="hero__actions">
+              <a href="#contact" class="btn btn--primary"
+                >Start Your Growth Journey</a
+              >
+              <a href="#method" class="btn btn--outline"
+                >Explore Our Approach</a
+              >
+            </div>
           </div>
-        </div>
-        <div class="hero__swing" aria-hidden="true">
-          <svg
-            viewBox="0 0 1440 100"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0,78 C360,78 720,32 1440,8 L1440,26 C720,50 360,96 0,82 Z"
-              fill="var(--color-accent-gold)"
-            />
-            <path
-              d="M0,82 C360,82 720,50 1440,26 L1440,100 L0,100 Z"
-              fill="var(--color-primary-green)"
-            />
-          </svg>
         </div>
       </section>
 
-      <!-- About -->
-      <section class="about section--dark" id="about">
+      <!-- The Franoshe Philosophy -->
+      <section class="philosophy-section" id="philosophy">
         <div class="container">
-          <div class="about__grid">
-            <div class="about__main fade-up">
-              <h2 class="section-title section-title--gold">
-                About Franoshe Consulting
-              </h2>
+          <header class="philosophy-section__header fade-up">
+            <p class="philosophy-section__eyebrow">The Franoshe Philosophy</p>
+            <div class="philosophy-section__rule" aria-hidden="true"></div>
+            <div class="philosophy-section__intro philosophy-section__copy">
               <p>
-                Franoshe Consulting is a People &amp; Organizational Growth
-                Partner committed to helping organizations unlock sustainable
-                success through intentional investment in people, leadership and
-                systems.
+                At Franoshe Consulting, we believe
+                <strong>sustainable organizational success</strong> is never
+                accidental. It is built through intentional investment in
+                people, leadership and systems that work together to create
+                lasting value.
               </p>
-
-              <div class="about__icons">
-                <div class="about__icon-item">
-                  <i
-                    class="fa-solid fa-users about__icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span class="about__icon-label">People</span>
-                  <span class="about__icon-desc">We develop capability.</span>
-                </div>
-                <div class="about__icon-item">
-                  <i
-                    class="fa-solid fa-user-tie about__icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span class="about__icon-label">Leaders</span>
-                  <span class="about__icon-desc">We build confidence.</span>
-                </div>
-                <div class="about__icon-item">
-                  <i
-                    class="fa-solid fa-city about__icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span class="about__icon-label">Systems</span>
-                  <span class="about__icon-desc">We create structure.</span>
-                </div>
-                <div class="about__icon-item">
-                  <i
-                    class="fa-solid fa-arrow-trend-up about__icon"
-                    aria-hidden="true"
-                  ></i>
-                  <span class="about__icon-label">Growth</span>
-                  <span class="about__icon-desc">We drive results.</span>
-                </div>
-              </div>
-
-              <div class="about__closing">
-                <p>
-                  We believe that HR should create business value, leadership
-                  should inspire performance, and learning should transform
-                  behaviour.
-                </p>
-                <p>We are not in the business of simply solving HR problems.</p>
-                <p>
-                  We are in the business of building organizations that thrive.
-                </p>
-                <p>
-                  Every engagement is designed to strengthen capability, improve
-                  performance and leave our clients better equipped for future
-                  success.
-                </p>
-                <p>Because when people grow, organizations flourish.</p>
-              </div>
+              <p class="philosophy-section__belief">
+                Everything we do is guided by one belief:
+                <strong>Growth is Intentional.</strong>
+              </p>
             </div>
+          </header>
 
-            <div class="about__pillars fade-up delay-1">
-              <div class="pillar">
-                <i
-                  class="fa-solid fa-bullseye pillar__icon"
-                  aria-hidden="true"
-                ></i>
-                <h3 class="pillar__title">Our Purpose</h3>
-                <p>
+          <div class="philosophy-cards">
+            <article class="philosophy-card fade-up">
+              <div class="philosophy-card__icon" aria-hidden="true">
+                <img
+                  src="assets/images/leave-icon.png"
+                  alt=""
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <div class="philosophy-card__body">
+                <h3 class="philosophy-card__title">Why We Exist</h3>
+                <p class="philosophy-section__copy">
                   To help organizations unlock sustainable growth by building
                   the people, leaders and systems that create lasting success.
                 </p>
               </div>
-              <div class="pillar">
-                <i class="fa-solid fa-eye pillar__icon" aria-hidden="true"></i>
-                <h3 class="pillar__title">Our Vision</h3>
-                <p>
+            </article>
+
+            <article class="philosophy-card fade-up delay-1">
+              <div class="philosophy-card__icon" aria-hidden="true">
+                <img
+                  src="assets/images/world-icon.png"
+                  alt=""
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <div class="philosophy-card__body">
+                <h3 class="philosophy-card__title">Where We're Going</h3>
+                <p class="philosophy-section__copy">
                   To become Africa's trusted partner for building
                   high-performing organizations through intentional leadership,
                   people development and organizational excellence.
                 </p>
               </div>
-              <div class="pillar">
-                <i
-                  class="fa-solid fa-rocket pillar__icon"
-                  aria-hidden="true"
-                ></i>
-                <h3 class="pillar__title">Our Mission</h3>
-                <p>
-                  To empower organizations with practical HR solutions,
-                  transformative leadership development and impactful learning
-                  experiences that strengthen capability and drive sustainable
-                  growth.
+            </article>
+
+            <article class="philosophy-card fade-up delay-2">
+              <div class="philosophy-card__icon" aria-hidden="true">
+                <img
+                  src="assets/images/handshake-icon.png"
+                  alt=""
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <div class="philosophy-card__body">
+                <h3 class="philosophy-card__title">How We Create Impact</h3>
+                <p class="philosophy-section__copy">
+                  We empower organizations through practical people solutions,
+                  transformative leadership development and capability-building
+                  experiences that strengthen performance.
                 </p>
               </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature Statement -->
+      <section class="feature-statement" id="feature-statement">
+        <div class="container feature-statement__inner fade-up">
+          <p>
+            Great organizations are not built by chance. They are built through
+            intentional investment in people, leadership and systems.
+          </p>
+
+          <p class="feature-statement__emphasis">
+            That's why growth is intentional.
+          </p>
+        </div>
+      </section>
+
+      <!-- Our Focus -->
+      <section class="focus-section" id="focus">
+        <div class="container">
+          <header class="focus-section__header fade-up">
+            <p class="focus-section__eyebrow">Our Focus</p>
+            <div class="focus-section__rule" aria-hidden="true"></div>
+            <div class="focus-section__intro focus-section__copy">
+              <p><strong>Growth is built, not hoped for.</strong></p>
+              <p>
+                The strongest organizations don't succeed because they have more
+                people. They succeed because they intentionally develop capable
+                leaders, build effective systems and create cultures where
+                people can perform at their best.
+              </p>
+              <p>
+                At Franoshe Consulting, we help organizations strengthen the
+                foundations that drive long-term success.
+              </p>
+            </div>
+          </header>
+
+          <!-- <div class="focus-band fade-up">
+            <div class="focus-band__heading">
+              <span class="focus-band__line" aria-hidden="true"></span>
+              <span class="focus-band__title">Our Focus. Your Growth.</span>
+              <span class="focus-band__line" aria-hidden="true"></span>
+            </div>
+            <div class="focus-band__grid">
+              <div class="focus-band__item">
+                <i class="fa-solid fa-users focus-band__icon" aria-hidden="true"></i>
+                <div class="focus-band__text">
+                  <h3 class="focus-band__label">People</h3>
+                  <span class="focus-band__underline" aria-hidden="true"></span>
+                  <p>People who never stop growing.</p>
+                </div>
+              </div>
+              <div class="focus-band__item">
+                <i class="fa-solid fa-star focus-band__icon" aria-hidden="true"></i>
+                <div class="focus-band__text">
+                  <h3 class="focus-band__label">Leadership</h3>
+                  <span class="focus-band__underline" aria-hidden="true"></span>
+                  <p>Leaders who inspire trust and performance.</p>
+                </div>
+              </div>
+              <div class="focus-band__item">
+                <i class="fa-solid fa-landmark focus-band__icon" aria-hidden="true"></i>
+                <div class="focus-band__text">
+                  <h3 class="focus-band__label">Systems</h3>
+                  <span class="focus-band__underline" aria-hidden="true"></span>
+                  <p>Systems that enable excellence.</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="continuum fade-up">
+            <h3 class="continuum__heading">The Growth Continuum</h3>
+            <div class="continuum__track">
+              <div class="continuum__line" aria-hidden="true"></div>
+              <ol class="continuum__steps">
+                <li class="continuum__step">
+                  <span class="continuum__node">1</span>
+                  <span class="continuum__label">Workplaces That Work</span>
+                </li>
+                <li class="continuum__step">
+                  <span class="continuum__node">2</span>
+                  <span class="continuum__label">Leaders Who Inspire</span>
+                </li>
+                <li class="continuum__step">
+                  <span class="continuum__node">3</span>
+                  <span class="continuum__label"
+                    >Capability That Compounds</span
+                  >
+                </li>
+                <li class="continuum__step">
+                  <span class="continuum__node">4</span>
+                  <span class="continuum__label">Partnership For Growth</span>
+                </li>
+                <li class="continuum__step">
+                  <span class="continuum__node">5</span>
+                  <span class="continuum__label"
+                    >Organizations That Flourish</span
+                  >
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="focus-blocks">
+            <article class="focus-block fade-up">
+              <div class="focus-block__head">
+                <span class="focus-block__symbol" aria-hidden="true">🌱</span>
+                <h3 class="focus-block__title">Workplaces That Work</h3>
+              </div>
+              <p class="focus-section__copy">
+                Great organizations rely on systems that create clarity,
+                consistency and accountability. We help organizations build
+                practical frameworks that support performance and sustainable
+                growth.
+              </p>
+              <h4 class="focus-block__outcomes-title">Outcomes</h4>
+              <ul class="focus-block__list">
+                <li>Strong people systems</li>
+                <li>Better performance management</li>
+                <li>Improved accountability</li>
+                <li>Scalable organizational structures</li>
+                <li>Alignment between people and business strategy</li>
+              </ul>
+              <p class="focus-block__tagline">
+                Because growth needs structure.
+              </p>
+            </article>
+
+            <article class="focus-block fade-up delay-1">
+              <div class="focus-block__head">
+                <span class="focus-block__symbol" aria-hidden="true">👥</span>
+                <h3 class="focus-block__title">Leaders Who Inspire</h3>
+              </div>
+              <p class="focus-section__copy">
+                Organizations rarely outgrow the capability of their leaders. We
+                develop leaders who create clarity, trust and accountability.
+              </p>
+              <h4 class="focus-block__outcomes-title">Outcomes</h4>
+              <ul class="focus-block__list">
+                <li>Stronger leadership capability</li>
+                <li>Better communication</li>
+                <li>Greater team engagement</li>
+                <li>Improved performance conversations</li>
+                <li>Leadership confidence</li>
+              </ul>
+              <p class="focus-block__tagline">
+                Because better leaders build better organizations.
+              </p>
+            </article>
+
+            <article class="focus-block fade-up delay-1">
+              <div class="focus-block__head">
+                <span class="focus-block__symbol" aria-hidden="true">📈</span>
+                <h3 class="focus-block__title">Capability That Compounds</h3>
+              </div>
+              <p class="focus-section__copy">
+                Learning should create change, not simply transfer knowledge. We
+                design practical learning experiences that improve workplace
+                performance.
+              </p>
+              <h4 class="focus-block__outcomes-title">Outcomes</h4>
+              <ul class="focus-block__list">
+                <li>Improved collaboration</li>
+                <li>Better communication</li>
+                <li>Higher workplace effectiveness</li>
+                <li>Stronger customer experience</li>
+                <li>Future-ready skills</li>
+              </ul>
+              <p class="focus-block__tagline">
+                Because capability is the foundation of growth.
+              </p>
+            </article>
+
+            <article class="focus-block fade-up delay-2">
+              <div class="focus-block__head">
+                <span class="focus-block__symbol" aria-hidden="true">🤝</span>
+                <h3 class="focus-block__title">Partnership For Growth</h3>
+              </div>
+              <p class="focus-section__copy">
+                We work alongside founders, executives and leadership teams to
+                strengthen organizational capability and navigate growth.
+              </p>
+              <h4 class="focus-block__outcomes-title">Outcomes</h4>
+              <ul class="focus-block__list">
+                <li>Stronger organizations</li>
+                <li>Better decision-making</li>
+                <li>Sustainable solutions</li>
+                <li>Internal capability</li>
+                <li>Long-term growth readiness</li>
+              </ul>
+              <p class="focus-block__tagline">
+                Because true consulting builds capability—not dependency.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Franoshe Method -->
+      <section class="method-section" id="method">
+        <div class="container">
+          <header class="method-section__header fade-up">
+            <p class="method-section__eyebrow">The Franoshe Method</p>
+            <div class="method-section__rule" aria-hidden="true"></div>
+            <div class="method-section__intro method-section__copy">
+              <p><strong>How Growth Happens</strong></p>
+              <p>
+                Growth is never accidental. Every engagement follows our GROW
+                Framework
+              </p>
+            </div>
+          </header>
+
+          <div class="method-frameworks">
+            <article class="method-panel method-panel--grow fade-up">
+              <div class="method-panel__head">
+                <h2 class="method-panel__title">The GROW Framework&trade;</h2>
+                <div class="method-ornament" aria-hidden="true">
+                  <span class="method-ornament__line"></span>
+                  <i class="fa-solid fa-leaf method-ornament__icon"></i>
+                  <span class="method-ornament__line"></span>
+                </div>
+              </div>
+
+              <div class="grow-track">
+                <div class="grow-track__flow">
+                  <div class="grow-step">
+                    <div class="grow-step__circle" aria-hidden="true">G</div>
+                    <div class="grow-step__body">
+                      <h3 class="grow-step__title">Gather Insights</h3>
+                      <p class="grow-step__text">We listen before we advise.</p>
+                    </div>
+                  </div>
+                  <span class="grow-track__arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                  <div class="grow-step">
+                    <div class="grow-step__circle" aria-hidden="true">R</div>
+                    <div class="grow-step__body">
+                      <h3 class="grow-step__title">Reveal Opportunities</h3>
+                      <p class="grow-step__text">
+                        We uncover root causes and growth opportunities.
+                      </p>
+                    </div>
+                  </div>
+                  <span class="grow-track__arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                  <div class="grow-step">
+                    <div class="grow-step__circle" aria-hidden="true">O</div>
+                    <div class="grow-step__body">
+                      <h3 class="grow-step__title">Organize Solutions</h3>
+                      <p class="grow-step__text">
+                        We design practical solutions tailored to your
+                        organization.
+                      </p>
+                    </div>
+                  </div>
+                  <span class="grow-track__arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                  <div class="grow-step">
+                    <div class="grow-step__circle" aria-hidden="true">W</div>
+                    <div class="grow-step__body">
+                      <h3 class="grow-step__title">Win Through Capability</h3>
+                      <p class="grow-step__text">
+                        We strengthen capability that continues creating value
+                        long after our engagement ends.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="method-panel method-panel--gold fade-up delay-1">
+              <div class="method-panel__head">
+                <h2 class="method-panel__title">The Franoshe Gold Standard</h2>
+                <div class="method-ornament" aria-hidden="true">
+                  <span class="method-ornament__line"></span>
+                  <i class="fa-solid fa-leaf method-ornament__icon"></i>
+                  <span class="method-ornament__line"></span>
+                </div>
+              </div>
+
+              <div class="gold-cards">
+                <article class="gold-card">
+                  <span class="gold-card__letter" aria-hidden="true">G</span>
+                  <div class="gold-card__content">
+                    <h3 class="gold-card__title">Growth</h3>
+                    <p class="gold-card__text">
+                      We believe every organization can become better through
+                      intentional development.
+                    </p>
+                  </div>
+                </article>
+                <article class="gold-card">
+                  <span class="gold-card__letter" aria-hidden="true">O</span>
+                  <div class="gold-card__content">
+                    <h3 class="gold-card__title">Ownership</h3>
+                    <p class="gold-card__text">
+                      We honour commitments and take responsibility for
+                      outcomes.
+                    </p>
+                  </div>
+                </article>
+                <article class="gold-card">
+                  <span class="gold-card__letter" aria-hidden="true">L</span>
+                  <div class="gold-card__content">
+                    <h3 class="gold-card__title">Leadership</h3>
+                    <p class="gold-card__text">
+                      We lead with integrity, service and accountability.
+                    </p>
+                  </div>
+                </article>
+                <article class="gold-card">
+                  <span class="gold-card__letter" aria-hidden="true">D</span>
+                  <div class="gold-card__content">
+                    <h3 class="gold-card__title">Distinction</h3>
+                    <p class="gold-card__text">
+                      We pursue excellence and create experiences that leave
+                      lasting value.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Organizations Grow With Us -->
+      <section class="grow-section" id="grow-with-us">
+        <div class="container">
+          <header class="grow-section__header fade-up">
+            <p class="grow-section__eyebrow">Why Organizations Grow With Us</p>
+            <div class="grow-section__rule" aria-hidden="true"></div>
+          </header>
+
+          <div class="grow-partnership">
+            <div class="grow-partnership__lead fade-up">
+              <h2 class="grow-partnership__headline">
+                More Than Consulting.<br />
+                <span>A Growth Partnership.</span>
+              </h2>
+              <div class="grow-partnership__goal">
+                <p class="grow-partnership__goal-label">Our goal is simple:</p>
+                <p class="grow-partnership__goal-text">
+                  To leave organizations stronger than we found them.
+                </p>
+              </div>
+            </div>
+
+            <ul class="grow-partnership__list">
+              <li class="grow-partnership__item fade-up">
+                <span
+                  class="grow-partnership__marker"
+                  aria-hidden="true"
+                ></span>
+                <p>We lead with outcomes, not activities.</p>
+              </li>
+              <li class="grow-partnership__item fade-up delay-1">
+                <span
+                  class="grow-partnership__marker"
+                  aria-hidden="true"
+                ></span>
+                <p>We build capability, not dependency.</p>
+              </li>
+              <li class="grow-partnership__item fade-up delay-1">
+                <span
+                  class="grow-partnership__marker"
+                  aria-hidden="true"
+                ></span>
+                <p>
+                  We combine strategic thinking with practical implementation.
+                </p>
+              </li>
+              <li class="grow-partnership__item fade-up delay-2">
+                <span
+                  class="grow-partnership__marker"
+                  aria-hidden="true"
+                ></span>
+                <p>
+                  We understand that people, leadership and systems are
+                  interconnected.
+                </p>
+              </li>
+              <li class="grow-partnership__item fade-up delay-2">
+                <span
+                  class="grow-partnership__marker"
+                  aria-hidden="true"
+                ></span>
+                <p>
+                  We focus on sustainable organizational growth rather than
+                  short-term fixes.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insights -->
+      <section class="insights-section" id="insights">
+        <div class="container">
+          <header class="insights-section__header fade-up">
+            <p class="insights-section__eyebrow">Insights</p>
+            <div class="insights-section__rule" aria-hidden="true"></div>
+            <h2 class="insights-section__title">The Franoshe Perspective</h2>
+            <p class="insights-section__tagline">
+              Ideas. Perspectives. Practical Solutions.
+            </p>
+          </header>
+
+          <div class="insights-themes fade-up delay-1">
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">Organizational Growth</h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">
+                First-Time Manager Development
+              </h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">Leadership Development</h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">Workplace Effectiveness</h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">HR Strategy</h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">Learning &amp; Development</h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">Culture &amp; Engagement</h3>
+            </article>
+            <article class="insights-theme">
+              <span class="insights-theme__dot" aria-hidden="true"></span>
+              <h3 class="insights-theme__label">
+                Performance &amp; Productivity
+              </h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Opportunities -->
+      <section class="opportunities-section" id="opportunities">
+        <div class="container">
+          <header class="opportunities-section__header fade-up">
+            <p class="opportunities-section__eyebrow">Opportunities</p>
+            <div class="opportunities-section__rule" aria-hidden="true"></div>
+          </header>
+
+          <div class="opportunities-grid">
+            <article
+              class="opp-card opp-card--featured fade-up"
+              id="opportunities-recruitment"
+            >
+              <div class="opp-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="opp-card__body">
+                <h2 class="opp-card__title">Growth Opportunities</h2>
+                <p class="opp-card__intro">
+                  Explore opportunities to grow your career and contribute to
+                  organizations building for the future.
+                </p>
+                <ul class="opp-card__list">
+                  <li>
+                    <i
+                      class="fa-solid fa-arrow-trend-up"
+                      aria-hidden="true"
+                    ></i>
+                    Job openings
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                    Recruitment projects
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                    Internship opportunities
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    Career resources
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              class="opp-card opp-card--learning fade-up delay-1"
+              id="opportunities-learning"
+            >
+              <div class="opp-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <div class="opp-card__body">
+                <h2 class="opp-card__title">Learning Experiences</h2>
+                <p class="opp-card__intro">
+                  Practical training programs designed to build capability and
+                  improve workplace performance.
+                </p>
+                <div class="content-placeholder" role="status">
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  <p>Training programs — content coming soon</p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="opp-card opp-card--gallery fade-up delay-2"
+              id="opportunities-events"
+            >
+              <div class="opp-card__icon-wrap" aria-hidden="true">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <div class="opp-card__body">
+                <h2 class="opp-card__title">Growth in Action</h2>
+                <p class="opp-card__intro">
+                  A photo and video gallery showcasing projects, partnerships
+                  and growth moments in action.
+                </p>
+                <div class="gallery-placeholder">
+                  <div class="gallery-placeholder__item" aria-hidden="true">
+                    <i class="fa-solid fa-image"></i>
+                  </div>
+                  <div class="gallery-placeholder__item" aria-hidden="true">
+                    <i class="fa-solid fa-play"></i>
+                  </div>
+                  <div class="gallery-placeholder__item" aria-hidden="true">
+                    <i class="fa-solid fa-image"></i>
+                  </div>
+                  <div class="gallery-placeholder__item" aria-hidden="true">
+                    <i class="fa-solid fa-image"></i>
+                  </div>
+                  <div class="gallery-placeholder__item" aria-hidden="true">
+                    <i class="fa-solid fa-play"></i>
+                  </div>
+                  <div class="gallery-placeholder__item" aria-hidden="true">
+                    <i class="fa-solid fa-image"></i>
+                  </div>
+                </div>
+                <p class="gallery-placeholder__label" role="status">
+                  Gallery — content coming soon
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact & Partnerships -->
+      <section class="impact-section" id="impact">
+        <div class="container">
+          <header class="impact-section__header fade-up">
+            <p class="impact-section__eyebrow">Impact &amp; Partnerships</p>
+            <div class="impact-section__rule" aria-hidden="true"></div>
+          </header>
+
+          <div class="impact-logos fade-up delay-1">
+            <p class="impact-logos__label">
+              Trusted by organizations building for growth
+            </p>
+            <div class="impact-logos__grid" role="list">
+              <div class="logo-placeholder" role="listitem">
+                <span>Client logo</span>
+              </div>
+              <div class="logo-placeholder" role="listitem">
+                <span>Client logo</span>
+              </div>
+              <div class="logo-placeholder" role="listitem">
+                <span>Client logo</span>
+              </div>
+              <div class="logo-placeholder" role="listitem">
+                <span>Client logo</span>
+              </div>
+              <div class="logo-placeholder" role="listitem">
+                <span>Client logo</span>
+              </div>
+              <div class="logo-placeholder" role="listitem">
+                <span>Client logo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="impact-stories fade-up delay-2">
+            <h2 class="impact-stories__title">Success Stories</h2>
+            <div class="impact-stories__grid">
+              <article class="story-placeholder">
+                <div class="story-placeholder__quote" aria-hidden="true">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+                <p class="story-placeholder__text" role="status">
+                  Client success story — content coming soon
+                </p>
+                <div class="story-placeholder__meta">
+                  <span
+                    class="story-placeholder__avatar"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="story-placeholder__line"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+              </article>
+              <article class="story-placeholder">
+                <div class="story-placeholder__quote" aria-hidden="true">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+                <p class="story-placeholder__text" role="status">
+                  Client success story — content coming soon
+                </p>
+                <div class="story-placeholder__meta">
+                  <span
+                    class="story-placeholder__avatar"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="story-placeholder__line"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Philosophy -->
-      <!-- <section class="philosophy" id="approach">
-        <div
-          class="philosophy__leaf philosophy__leaf--tl"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="philosophy__leaf philosophy__leaf--br"
-          aria-hidden="true"
-        ></div>
-        <div class="container">
-          <div class="philosophy__grid">
-            <div class="philosophy__believe fade-up">
-              <h2 class="section-title">What We Believe</h2>
-              <p class="philosophy__tagline">Growth is Intentional.</p>
-              <p>
-                We believe that organizations grow when people grow. When
-                leaders are equipped, systems are aligned, and learning is
-                purposeful, performance follows naturally.
-              </p>
-              <p>
-                Our work is rooted in the conviction that investing in people is
-                the highest-return strategy any organization can make.
-              </p>
-
-              <div class="belief-cards">
-                <div class="belief-card">
-                  <i class="fa-solid fa-users" aria-hidden="true"></i>
-                  <span>People</span>
-                </div>
-                <div class="belief-card">
-                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
-                  <span>Leaders</span>
-                </div>
-                <div class="belief-card">
-                  <i class="fa-solid fa-sitemap" aria-hidden="true"></i>
-                  <span>Systems</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="philosophy__difference fade-up delay-1">
-              <h2 class="section-title">The Franoshe Difference</h2>
-              <ul class="difference-list">
-                <li>
-                  <strong>People-First Approach</strong> — We start with your
-                  people, not just your processes.
-                </li>
-                <li>
-                  <strong>Practical Solutions</strong> — No fluff. Every
-                  recommendation is actionable and tailored.
-                </li>
-                <li>
-                  <strong>Partnership Mindset</strong> — We work alongside you,
-                  not above you.
-                </li>
-                <li>
-                  <strong>Sustainable Impact</strong> — We build capability that
-                  outlasts our engagement.
-                </li>
-                <li>
-                  <strong>Proven Frameworks</strong> — Our GROW and GOLD
-                  methodologies deliver consistent results.
-                </li>
-              </ul>
-              <p class="philosophy__closing">
-                Because true consulting leaves organizations stronger than it
-                found them.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- Services -->
-      <!-- <section class="services section--light" id="services">
-        <div class="container">
-          <h2 class="section-title section-title--center fade-up">
-            How We Help Organizations Grow
-          </h2>
-          <div class="services__grid">
-            <article class="service-card fade-up">
-              <div class="service-card__icon service-card__icon--green">
-                <i class="fa-solid fa-building" aria-hidden="true"></i>
-              </div>
-              <h3 class="service-card__title">Build Strong HR Foundations</h3>
-              <p class="service-card__intro">
-                Establish the policies, practices, and culture that attract,
-                retain, and develop top talent.
-              </p>
-              <ul class="service-card__list">
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> HR
-                  Strategy &amp; Audit
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Policy
-                  Development
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Talent
-                  Management
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Employee
-                  Engagement
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  Performance Management
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  Compliance &amp; Best Practices
-                </li>
-              </ul>
-              <a href="#contact" class="service-card__link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-              ></a>
-            </article>
-
-            <article class="service-card fade-up delay-1">
-              <div class="service-card__icon service-card__icon--gold">
-                <i class="fa-solid fa-people-group" aria-hidden="true"></i>
-              </div>
-              <h3 class="service-card__title">Develop Confident Leaders</h3>
-              <p class="service-card__intro">
-                Equip your leaders with the skills, mindset, and tools to
-                inspire teams and drive results.
-              </p>
-              <ul class="service-card__list">
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  Leadership Coaching
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Executive
-                  Development
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Team
-                  Effectiveness
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Change
-                  Management
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  Communication Skills
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  Succession Planning
-                </li>
-              </ul>
-              <a href="#contact" class="service-card__link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-              ></a>
-            </article>
-
-            <article class="service-card fade-up delay-2">
-              <div class="service-card__icon service-card__icon--green">
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-              </div>
-              <h3 class="service-card__title">
-                Create Learning That Changes Performance
-              </h3>
-              <p class="service-card__intro">
-                Design and deliver training experiences that translate directly
-                into improved workplace performance.
-              </p>
-              <ul class="service-card__list">
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Custom
-                  Training Programs
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Workshop
-                  Facilitation
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Learning
-                  Needs Analysis
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  E-Learning Development
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i>
-                  Onboarding Programs
-                </li>
-                <li>
-                  <i class="fa-solid fa-check" aria-hidden="true"></i> Skills
-                  Assessment
-                </li>
-              </ul>
-              <a href="#contact" class="service-card__link"
-                >Learn More
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-              ></a>
-            </article>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- Frameworks -->
-      <!-- <section class="frameworks" id="resources">
-        <div class="container">
-          <div class="frameworks__grid">
-            <div class="framework-box fade-up">
-              <h2 class="framework-box__title">
-                The Franoshe GROW Framework&trade;
-              </h2>
-              <p class="framework-box__subtitle">
-                A structured approach to organizational development
-              </p>
-              <div class="grow-flow">
-                <div class="grow-step">
-                  <div class="grow-step__circle">G</div>
-                  <h4>Gather Insights</h4>
-                  <p>
-                    Understand your organization's current state, challenges,
-                    and opportunities through assessment and dialogue.
-                  </p>
-                </div>
-                <div class="grow-arrow" aria-hidden="true">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </div>
-                <div class="grow-step">
-                  <div class="grow-step__circle">R</div>
-                  <h4>Reveal Opportunities</h4>
-                  <p>
-                    Identify gaps, strengths, and strategic priorities that will
-                    drive meaningful change.
-                  </p>
-                </div>
-                <div class="grow-arrow" aria-hidden="true">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </div>
-                <div class="grow-step">
-                  <div class="grow-step__circle">O</div>
-                  <h4>Organize Solutions</h4>
-                  <p>
-                    Design tailored interventions aligned with your goals,
-                    culture, and resources.
-                  </p>
-                </div>
-                <div class="grow-arrow" aria-hidden="true">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </div>
-                <div class="grow-step">
-                  <div class="grow-step__circle">W</div>
-                  <h4>Win Through Capability</h4>
-                  <p>
-                    Implement, measure, and sustain results by building internal
-                    capability and ownership.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="framework-box fade-up delay-1">
-              <h2 class="framework-box__title">
-                The Franoshe GOLD Standard&trade;
-              </h2>
-              <p class="framework-box__subtitle">
-                Our commitment to excellence in every engagement
-              </p>
-              <div class="gold-list">
-                <div class="gold-item">
-                  <div class="gold-item__circle">G</div>
-                  <div class="gold-item__content">
-                    <h4>Growth</h4>
-                    <p>
-                      Every engagement is designed to create measurable,
-                      sustainable growth for your organization.
-                    </p>
-                  </div>
-                </div>
-                <div class="gold-item">
-                  <div class="gold-item__circle">O</div>
-                  <div class="gold-item__content">
-                    <h4>Ownership</h4>
-                    <p>
-                      We transfer knowledge and capability so your team owns the
-                      outcomes long after we leave.
-                    </p>
-                  </div>
-                </div>
-                <div class="gold-item">
-                  <div class="gold-item__circle">L</div>
-                  <div class="gold-item__content">
-                    <h4>Leadership</h4>
-                    <p>
-                      We model the leadership behaviors we help you develop —
-                      integrity, clarity, and partnership.
-                    </p>
-                  </div>
-                </div>
-                <div class="gold-item">
-                  <div class="gold-item__circle">D</div>
-                  <div class="gold-item__content">
-                    <h4>Distinction</h4>
-                    <p>
-                      We deliver work that sets your organization apart —
-                      thoughtful, practical, and exceptional.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- CTA Section -->
-      <!-- <section class="cta-section">
-        <div class="container cta-section__grid">
-          <div class="cta-panel cta-panel--green fade-up">
-            <h2 class="cta-panel__title">
-              Why Clients Choose Franoshe Consulting
-            </h2>
-            <ul class="cta-checklist">
-              <li>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                People-first consulting approach
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                Proven GROW &amp; GOLD frameworks
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                Tailored, practical solutions
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                Sustainable, lasting impact
-              </li>
-              <li>
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                Trusted partnership model
-              </li>
-            </ul>
-          </div>
-
-          <div class="cta-panel cta-panel--white fade-up delay-1">
-            <div class="cta-panel__icon">
-              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
-            </div>
-            <h2 class="cta-panel__title cta-panel__title--green">
-              Our Promise
-            </h2>
-            <p>
-              We promise to listen deeply, act with integrity, and deliver work
-              that makes a real difference. Your success is our success — and we
-              treat every engagement with the care it deserves.
-            </p>
-            <div class="promise-icons">
-              <div class="promise-icon">
-                <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                <span>Care</span>
-              </div>
-              <div class="promise-icon">
-                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-                <span>Integrity</span>
-              </div>
-              <div class="promise-icon">
-                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-                <span>Insight</span>
-              </div>
-              <div class="promise-icon">
-                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <span>Excellence</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="cta-panel cta-panel--green cta-panel--image fade-up delay-2"
+      <!-- Let's Build What's Next -->
+      <section class="build-section" id="build-next">
+        <div class="build-section__bg" aria-hidden="true"></div>
+        <div class="container build-section__inner fade-up">
+          <p class="build-section__eyebrow">Let's Build What's Next</p>
+          <div class="build-section__rule" aria-hidden="true"></div>
+          <p class="build-section__lead">
+            The organizations that thrive tomorrow are the ones intentionally
+            investing in their people, leaders and systems today.
+          </p>
+          <p class="build-section__copy">
+            Whether you're strengthening leadership capability, improving
+            organizational effectiveness or preparing your business for growth,
+            Franoshe Consulting is ready to partner with you.
+          </p>
+          <a href="#contact" class="btn btn--gold build-section__cta"
+            >Start Your Growth Journey</a
           >
-            <h2 class="cta-panel__title">
-              Let's Build an Organization That Lasts.
-            </h2>
-            <p>
-              Ready to grow intentionally? Schedule a consultation and let's
-              explore how Franoshe Consulting can partner with you.
-            </p>
-            <a href="#contact" class="btn btn--gold">Schedule a Consultation</a>
-            <img
-              src="assets/images/flower-rock.png"
-              alt=""
-              class="cta-panel__rock"
-              width="160"
-              height="200"
-              aria-hidden="true"
-            />
-          </div>
         </div>
-      </section> -->
+      </section>
     </main>
 
     <!-- Footer -->
@@ -651,10 +972,15 @@
           <h3 class="footer__heading">Quick Links</h3>
           <ul class="footer__links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">What We Do</a></li>
-            <li><a href="#approach">Our Approach</a></li>
-            <li><a href="#resources">Resources</a></li>
+            <li><a href="#philosophy">Our Philosophy</a></li>
+            <li><a href="#focus">Our Focus</a></li>
+            <li><a href="#method">The Franoshe Method</a></li>
+            <li><a href="#grow-with-us">Grow With Us</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li>
+              <a href="#opportunities-recruitment">Growth Opportunities</a>
+            </li>
+            <li><a href="#impact">Impact &amp; Partnerships</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
@@ -682,7 +1008,7 @@
             </li>
             <li>
               <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <a href="tel:+2347066155463">07066155463</a>
+              <a href="tel:+2347047008988">07047008988</a>
             </li>
             <li>
               <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -692,7 +1018,7 @@
             </li>
             <li>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/frances-olorunfemi-a34a926/"
                 class="footer__social"
                 target="_blank"
                 rel="noopener noreferrer"

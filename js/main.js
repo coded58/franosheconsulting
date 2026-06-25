@@ -4,7 +4,9 @@
   const header = document.getElementById('header');
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
-  const navLinks = document.querySelectorAll('.nav__link');
+  const navLinks = document.querySelectorAll('.nav__link:not(.nav__dropdown-toggle)');
+  const dropdownToggles = document.querySelectorAll('.nav__dropdown-toggle');
+  const dropdownLinks = document.querySelectorAll('.nav__dropdown-link');
   const sections = document.querySelectorAll('section[id]');
 
   /* ---- Mobile navigation ---- */
@@ -21,6 +23,11 @@
     hamburger.setAttribute('aria-expanded', 'false');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
+    document.querySelectorAll('.nav__item--dropdown.open').forEach(function (item) {
+      item.classList.remove('open');
+      const toggle = item.querySelector('.nav__dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
   }
 
   function openNav() {
@@ -41,7 +48,7 @@
 
   overlay.addEventListener('click', closeNav);
 
-  navLinks.forEach(function (link) {
+  document.querySelectorAll('.nav__link[href^="#"], .nav__dropdown-link').forEach(function (link) {
     link.addEventListener('click', closeNav);
   });
 
@@ -56,6 +63,34 @@
         target.scrollIntoView({ behavior: 'smooth' });
         closeNav();
       }
+    });
+  });
+
+  /* ---- Opportunities dropdown ---- */
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const parent = toggle.closest('.nav__item--dropdown');
+      const isOpen = parent.classList.contains('open');
+
+      document.querySelectorAll('.nav__item--dropdown.open').forEach(function (item) {
+        item.classList.remove('open');
+        const btn = item.querySelector('.nav__dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        parent.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.nav__item--dropdown.open').forEach(function (item) {
+      item.classList.remove('open');
+      const toggle = item.querySelector('.nav__dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
     });
   });
 
@@ -74,6 +109,7 @@
   /* ---- Active nav link on scroll ---- */
   function setActiveLink() {
     const scrollPos = window.scrollY + header.offsetHeight + 100;
+    let currentId = '';
 
     sections.forEach(function (section) {
       const top = section.offsetTop;
@@ -81,14 +117,49 @@
       const id = section.getAttribute('id');
 
       if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(function (link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('active');
+        currentId = id;
+      }
+    });
+
+    navLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+    });
+
+    dropdownToggles.forEach(function (toggle) {
+      toggle.classList.remove('active');
+    });
+
+    if (currentId) {
+      dropdownLinks.forEach(function (link) {
+        if (link.getAttribute('href') === '#' + currentId) {
+          const toggle = link
+            .closest('.nav__item--dropdown')
+            ?.querySelector('.nav__dropdown-toggle');
+          if (toggle) toggle.classList.add('active');
+        }
+      });
+
+      const sectionGroups = {
+        philosophy: 'About Us',
+        impact: 'About Us',
+        focus: 'What We Do',
+        method: 'Our Approach',
+        'grow-with-us': 'Our Approach',
+        insights: 'Resources',
+        'opportunities-recruitment': 'Resources',
+        'opportunities-learning': 'Resources',
+        'opportunities-events': 'Resources',
+      };
+
+      const groupLabel = sectionGroups[currentId];
+      if (groupLabel) {
+        dropdownToggles.forEach(function (toggle) {
+          if (toggle.textContent.trim().startsWith(groupLabel)) {
+            toggle.classList.add('active');
           }
         });
       }
-    });
+    }
   }
 
   window.addEventListener('scroll', setActiveLink, { passive: true });
@@ -124,7 +195,7 @@
 
   /* ---- Close nav on resize to desktop ---- */
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1100) {
       closeNav();
     }
   });
