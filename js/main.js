@@ -4,7 +4,7 @@
   const header = document.getElementById('header');
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
-  const navLinks = document.querySelectorAll('.nav__link:not(.nav__dropdown-toggle)');
+  const navLinks = document.querySelectorAll('.nav__link');
   const dropdownToggles = document.querySelectorAll('.nav__dropdown-toggle');
   const dropdownLinks = document.querySelectorAll('.nav__dropdown-link');
   const sections = document.querySelectorAll('section[id]');
@@ -122,41 +122,36 @@
     });
 
     navLinks.forEach(function (link) {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
-    });
-
-    dropdownToggles.forEach(function (toggle) {
-      toggle.classList.remove('active');
+      link.classList.remove('active');
     });
 
     if (currentId) {
-      dropdownLinks.forEach(function (link) {
-        if (link.getAttribute('href') === '#' + currentId) {
-          const toggle = link
-            .closest('.nav__item--dropdown')
-            ?.querySelector('.nav__dropdown-toggle');
-          if (toggle) toggle.classList.add('active');
-        }
-      });
-
-      const sectionGroups = {
-        philosophy: 'About Us',
-        impact: 'About Us',
-        focus: 'What We Do',
-        method: 'Our Approach',
-        'grow-with-us': 'Our Approach',
-        insights: 'Resources',
-        'opportunities-recruitment': 'Resources',
-        'opportunities-learning': 'Resources',
-        'opportunities-events': 'Resources',
+      const navSectionMap = {
+        home: 'Home',
+        philosophy: 'About',
+        'feature-statement': 'About',
+        focus: 'Solutions',
+        'where-we-help': 'Solutions',
+        insights: 'Insights',
+        impact: 'Impact',
+        opportunities: 'Opportunities',
+        'opportunities-recruitment': 'Opportunities',
+        'opportunities-learning': 'Opportunities',
+        'opportunities-events': 'Opportunities',
+        'build-next': 'Opportunities',
+        contact: 'Home',
       };
 
-      const groupLabel = sectionGroups[currentId];
-      if (groupLabel) {
-        dropdownToggles.forEach(function (toggle) {
-          if (toggle.textContent.trim().startsWith(groupLabel)) {
-            toggle.classList.add('active');
+      const navLabel = navSectionMap[currentId];
+      if (navLabel) {
+        navLinks.forEach(function (link) {
+          if (link.textContent.trim() === navLabel) {
+            link.classList.add('active');
           }
+        });
+      } else {
+        navLinks.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
         });
       }
     }
@@ -191,6 +186,12 @@
     fadeElements.forEach(function (el) {
       el.classList.add('visible');
     });
+  }
+
+  /* ---- Footer copyright year ---- */
+  var footerYear = document.getElementById('footer-year');
+  if (footerYear) {
+    footerYear.textContent = String(new Date().getFullYear());
   }
 
   /* ---- Close nav on resize to desktop ---- */
