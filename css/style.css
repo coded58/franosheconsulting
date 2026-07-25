@@ -441,9 +441,9 @@ ul {
 .hero__bg {
   position: absolute;
   top: var(--header-height);
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: -6%;
+  right: -6%;
+  bottom: -5%;
   background-image: url("../assets/images/hero-main.jpeg");
   background-size: cover;
   background-position: center center;
