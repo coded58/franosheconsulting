@@ -134,6 +134,7 @@
         'where-we-help': 'Solutions',
         insights: 'Insights',
         impact: 'Impact',
+        careers: 'Opportunities',
         opportunities: 'Opportunities',
         'opportunities-recruitment': 'Opportunities',
         'opportunities-learning': 'Opportunities',
@@ -193,6 +194,53 @@
   if (footerYear) {
     footerYear.textContent = String(new Date().getFullYear());
   }
+
+  /* ---- Career modals ---- */
+  var openCareerTriggers = document.querySelectorAll('[data-career-open]');
+  var activeCareerModal = null;
+  var lastCareerTrigger = null;
+
+  function openCareerModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+
+    modal.hidden = false;
+    activeCareerModal = modal;
+    document.body.classList.add('career-modal-open');
+
+    var closeBtn = modal.querySelector('.career-modal__close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeCareerModal() {
+    if (!activeCareerModal) return;
+
+    activeCareerModal.hidden = true;
+    activeCareerModal = null;
+    document.body.classList.remove('career-modal-open');
+
+    if (lastCareerTrigger) {
+      lastCareerTrigger.focus();
+      lastCareerTrigger = null;
+    }
+  }
+
+  openCareerTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      lastCareerTrigger = trigger;
+      openCareerModal(trigger.getAttribute('data-career-open'));
+    });
+  });
+
+  document.querySelectorAll('[data-career-close]').forEach(function (el) {
+    el.addEventListener('click', closeCareerModal);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && activeCareerModal) {
+      closeCareerModal();
+    }
+  });
 
   /* ---- Close nav on resize to desktop ---- */
   window.addEventListener('resize', function () {
